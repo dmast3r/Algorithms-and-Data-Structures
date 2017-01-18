@@ -1,13 +1,14 @@
+// This is my implementation of the KMP search algorithm. 
 #include<iostream>
 #include<string>
 #include<vector>
 using namespace std;
-void fill_ar(vector<int> &ar, size_t index, size_t &value)
+void fill_ar(vector<int> &ar, size_t index, size_t &value) 
 {
     ar[index] = value+1;
     ++value;
 }
-void build_lpa(string Test, vector<int>&ar)
+void build_lpa(string Test, vector<int>&ar) // A utility function to fill the lpa.
 {
     size_t len = Test.length(), j = 0;
     for(size_t i = 1; i < len; ++i)
@@ -34,17 +35,10 @@ void build_lpa(string Test, vector<int>&ar)
         }
     }
 }
-int main()
+void KMP_search(const string text, const string pattern, const size_t len_text, const size_t len_pattern) // perform KMP search
 {
-    string pattern, text;
-    cout<<"Enter text to be searched within: ";
-    cin>>text;
-    cout<<"Enter pattern to be searched: ";
-    cin>>pattern;
-    size_t len_text = text.length(), len_pattern = pattern.length(), i = 0, j = 0;
-    vector<int>vec(len_pattern,0);
-    build_lpa(pattern,vec);
-    for(; i < len_text; )
+    size_t i = 0, j = 0;
+    for(; i < len_text; ) 
     {
         if(text[i] == pattern[j])
         {
@@ -64,4 +58,16 @@ int main()
         }
     }
     cout<<"Entire text searched but no match found......!";
+}
+int main()
+{
+    string pattern, text;
+    cout<<"Enter text to be searched within: ";
+    cin>>text;
+    cout<<"Enter pattern to be searched: ";
+    cin>>pattern;
+    size_t len_text = text.length(), len_pattern = pattern.length();
+    vector<int>vec(len_pattern,0);
+    build_lpa(pattern,vec);
+    KMP_search(text, pattern, len_text, len_pattern);
 }
