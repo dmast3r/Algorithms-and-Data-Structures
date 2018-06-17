@@ -7,8 +7,6 @@
 
 3) Count the number of full binary trees (A rooted binary tree is full if every vertex has either two children or no children) with n+1 leaves.
 
-See this for more applications.
-
 The first few Catalan numbers for n = 0, 1, 2, 3, … are 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, ........
 
 Dynamic Programming solution:-
