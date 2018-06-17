@@ -15,7 +15,8 @@ Dynamic Programming solution:-
 dp[0] = 1;
 dp[i] = sum(dp[j] * dp[i-1-j]), 0 <= j < i
 
-
+Note - As Catlan Numbers grow very rapidly, many times the problem setter may ask you print the answer modulo 1e9+7, hence modify
+this implementation accordingly.
 */
 
 #include<bits/stdc++.h>
@@ -24,11 +25,11 @@ using namespace std;
 void solve() {
     int n;
     cin >> n;
-    int dp[n+1] = {0};
+    long long int dp[n+1] = {0};
     dp[1] = 1;
     
     for(int i = 2; i <= n; ++i) {
-        int sum = 0;
+        long long int sum = 0;
         for(int j = 0; j < i; ++j)
             sum += dp[i] * dp[i-1-j];
         dp[i] = sum;
