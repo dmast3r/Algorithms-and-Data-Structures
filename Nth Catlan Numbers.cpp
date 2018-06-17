@@ -15,7 +15,7 @@ Dynamic Programming solution:-
 dp[0] = 1;
 dp[i] = sum(dp[j] * dp[i-1-j]), 0 <= j < i
 
-Note - As Catlan Numbers grow very rapidly, many times the problem setter may ask you print the answer modulo 1e9+7, hence modify
+Note - As Catalan Numbers grow very rapidly, many times the problem setter may ask you print the answer modulo 1e9+7, hence modify
 this implementation accordingly.
 */
 
