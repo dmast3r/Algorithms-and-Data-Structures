@@ -1,3 +1,24 @@
+/*
+ *                                                      ---- Detect Cycle in a Directed Graph ----
+ *  The task is to detect a back edge in the Graph. To detect a back edge in the graph, choose an unvisited node and apply DFS while applying DFS keep track of all
+ *  of those nodes which are in the recursion stack. If there is a node which is already in the recursion stack and is descendent of the current node then there
+ *  is a cycle in the Graph.
+ */
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Graph
+{
+    int V;
+    list<int> *adj;
+public :
+    Graph(int V);
+    void addEdge(int v,int w);
+    bool isCyclic();
+};
+
+// A helper function for isCycle()
 bool isCyclicUtil(int u, bool visited[], bool rec_stack[], list<int> *adj) {
     // mark the current node as visited
     // as well as put it in the recursion stack
