@@ -1,2 +1,3 @@
-# Algorithms-and-Data-Structures
-This repository contains various Algorithms and Data Structures written in C++. These may be helpful form competitive programming prospective.
+# Interview Problems
+A repository containing some of the popular and challenging Algorithmic problems that you may face during an interview. Solution to
+the problems are written(mostly) in C++ and(a few) in Python. 
