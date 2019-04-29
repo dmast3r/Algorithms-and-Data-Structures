@@ -1,0 +1,40 @@
+/*
+  In place convert a Binary Tree to Linked List. Elements in the DLL should appear in the same order as of preoder traversal of
+  the tree.
+  
+  The structure of the Tree and the DLL is the same. That is, left in Tree means previous in DLL and right in Tree means next in
+  DLL.
+  
+  The structure of a node of the tree is as follows-
+  
+  Node {
+    int data;
+    Node *left, *right;
+  }
+*/
+
+// This is the Helper Function
+void convertToDLL(Node *root, Node **head_ref, Node *&prev) {
+    if(root == nullptr)
+        return;
+    
+    convertToDLL(root -> left, head_ref, prev);
+    
+    root -> left = prev;
+    if(prev == nullptr)
+        *head_ref = root;
+    else
+        prev -> right = root;
+    prev = root;    
+    
+    convertToDLL(root -> right, head_ref, prev);
+}
+
+// This function should convert a given Binary tree to Doubly
+// Linked List
+void BToDLL(Node *root, Node **head_ref) {
+    Node *prev = nullptr; 
+    convertToDLL(root, head_ref, prev);
+    if(prev)
+        prev -> right = nullptr;
+}
