@@ -18,8 +18,8 @@ void convertToDLL(Node *root, Node **head_ref, Node *&prev) {
     }
     
     else {
-        convertToDLL(root -> left, head_ref, ref);
-        convertToDLL(root -> right, head_ref, ref);
+        convertToDLL(root -> left, head_ref, prev);
+        convertToDLL(root -> right, head_ref, prev);
     }
 }
 
