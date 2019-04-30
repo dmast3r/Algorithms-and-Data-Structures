@@ -1,5 +1,8 @@
 /*
   Create a vector representation of a binary tree, so that it can be written to and read back from a file.
+  
+  The idea is to do a preorder traversal where null nodes are marked with some integer, here I have used -1, which is outside the 
+  range of the data of the nodes.
 */
 
 // Serialize the tree rooted at root in A.
